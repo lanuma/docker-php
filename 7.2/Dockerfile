@@ -6,7 +6,7 @@ COPY --from=builder /usr/bin/composer /usr/local/bin/
 
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/bin/
 
-RUN apk update --no-cache && apk add git
+RUN apk update --no-cache && apk add git openssh
 
 RUN  install-php-extensions gd mysqli pdo pdo_mysql
 
