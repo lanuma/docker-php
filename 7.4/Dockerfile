@@ -8,7 +8,7 @@ COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr
 
 RUN apk update --no-cache && apk add git openssh
 
-RUN  install-php-extensions gd mysqli pdo pdo_mysql
+RUN  install-php-extensions gd mysqli pdo pdo_mysql zip
 
 RUN curl -LO https://deployer.org/deployer.phar \
     && mv deployer.phar /usr/local/bin/dep \
