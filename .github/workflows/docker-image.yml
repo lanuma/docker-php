@@ -24,9 +24,10 @@ jobs:
 
   build-and-push:
     runs-on: ubuntu-latest
-    outputs:
-      output1: ${{ needs.my_job.outputs.job_output1 }}
     steps:
+      - name: "show output"
+        run: |
+          echo ${{ needs.check-changed-path.output1 }}
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
       - name: Login to Docker Hub
