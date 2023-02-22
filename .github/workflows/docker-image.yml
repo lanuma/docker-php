@@ -18,9 +18,9 @@ jobs:
         with:
           filters: |
             v80:
-              - '8.0'
+              - '8.0/**'
             v81:
-              - '8.1'
+              - '8.1/**'
 
   # build-and-push:
   #   runs-on: ubuntu-latest
