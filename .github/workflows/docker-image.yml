@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file ./8.1/Dockerfile --tag php:8.1
+      run: docker build . --file ./8.0/Dockerfile --tag php:8.0
