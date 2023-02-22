@@ -19,7 +19,7 @@ RUN cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini
 
 RUN sed -i 's/memory_limit = 128M/memory_limit = 512M/g' /usr/local/etc/php/php.ini
 
-RUN echo 'sukses 2'
+RUN echo 'sukses 3'
 
 WORKDIR /app
 

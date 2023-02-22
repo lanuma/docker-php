@@ -10,16 +10,16 @@ jobs:
   check-changed-path:
     runs-on: ubuntu-latest
     outputs:
-      output1: ${{ steps.filter.outputs.workflows }}
+      output1: ${{ steps.filter.outputs.filters }}
     steps:
       - uses: actions/checkout@v2
       - uses: dorny/paths-filter@v2
         id: filter
         with:
           filters: |
-            v80:
+            8.0:
               - '8.0/**'
-            v81:
+            8.1:
               - '8.1/**'
 
   # build-and-push:
