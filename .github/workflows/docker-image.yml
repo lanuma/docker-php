@@ -25,7 +25,7 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     outputs:
-      output1: ${{ steps.filter.outputs }}
+      output1: ${{ steps.filter.outputs.filters }}
     steps:
       - name: Check out source repository
         uses: actions/checkout@v3
