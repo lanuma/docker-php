@@ -27,15 +27,12 @@ jobs:
     outputs:
       output1: ${{ steps.filter.outputs.version }}
     steps:
-      - name: "show output"
-        run: |
-          echo ${{ needs.check-changed-path.output1 }}
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
       - uses: dorny/paths-filter@v2
         id: filter
         with:
-          version: |
+          filters: |
             8.0:
               - '8.0/**'
             8.1:
