@@ -24,6 +24,8 @@ jobs:
               - '8.0/**'
             wolusiji:
               - '8.1/**'
+            woluloro:
+              - '8.2/**'
       - name: run output
         run: |
           echo "${{steps.filter.outputs.*}}"
@@ -47,5 +49,12 @@ jobs:
           context: "{{defaultContext}}:8.1"
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: lanuma/php:8.1,lanuma/php:latest
-      
+          tags: lanuma/php:8.1
+      - name: Build and push image php 8.2
+        if: steps.filter.outputs.woluloro == 'true'
+        uses: docker/build-push-action@v4
+        with:
+          context: "{{defaultContext}}:8.2"
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: lanuma/php:8.2,lanuma/php:latest 
