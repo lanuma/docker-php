@@ -1,3 +1,5 @@
+LABEL maintainer="Angga Lanuma"
+
 FROM composer:2 AS builder
 
 FROM php:8.2-alpine
