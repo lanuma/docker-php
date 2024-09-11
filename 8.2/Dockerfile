@@ -1,5 +1,3 @@
-LABEL maintainer="Angga Lanuma"
-
 FROM composer:2 AS builder
 
 FROM php:8.2-alpine
@@ -7,6 +5,8 @@ FROM php:8.2-alpine
 COPY --from=builder /usr/bin/composer /usr/local/bin/
 
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/bin/
+
+LABEL maintainer="Angga Lanuma"
 
 RUN apk update --no-cache && apk add git openssh
 
