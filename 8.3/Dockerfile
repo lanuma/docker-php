@@ -11,6 +11,8 @@ RUN curl -fsSLo /usr/local/bin/dep https://github.com/deployphp/deployer/release
 
 FROM php:8.3-alpine
 
+LABEL maintainer="Angga Lanuma"
+
 COPY --from=builder /usr/local/lib/php/extensions/ /usr/local/lib/php/extensions/
 
 COPY --from=builder /usr/local/etc/php/conf.d/ /usr/local/etc/php/conf.d/
