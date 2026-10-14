@@ -28,7 +28,8 @@ jobs:
 
   build-and-push:
     needs: changes
-    if: needs.changes.outputs.versions != '[]'
+    # only push images for commits that landed on master (merged PR or direct push)
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master' && needs.changes.outputs.versions != '[]'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
